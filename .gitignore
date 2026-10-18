@@ -5,6 +5,13 @@
 *.cfe
 *.dt
 
+# Publication drafts & media
+*.docx
+*.html
+*.png
+*.jpg
+*.jpeg
+
 # 1C platform temporary and log files
 ExtDump_XML/
 *.log
