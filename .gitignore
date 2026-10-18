@@ -1,0 +1,28 @@
+# 1C binaries
+*.epf
+*.erf
+*.cf
+*.cfe
+*.dt
+
+# 1C platform temporary and log files
+ExtDump_XML/
+*.log
+*.cmd
+*.vbs
+*.done
+*.tmp
+.v8-project.json
+epf_stub_*
+epf_check_*
+epf_build_*
+
+# Local agent skills and workspace archives
+.agents/
+archive/
+
+# IDE and OS files
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini

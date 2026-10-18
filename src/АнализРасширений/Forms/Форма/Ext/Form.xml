@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Анализ конфликтов расширений конфигурации</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КомандаВыполнитьАнализ" id="1">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ВыполнитьАнализ</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.ExecuteTask</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="КомандаВыполнитьАнализРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="КомандаСформироватьОтчет" id="210">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.СформироватьОтчет</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Report</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="КомандаСформироватьОтчетРасширеннаяПодсказка" id="211"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапкаСводка" id="3">
+			<Group>Horizontal</Group>
+			<ExtendedTooltip name="ГруппаШапкаСводкаРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<LabelField name="ВсегоРасширений" id="5">
+					<DataPath>ВсегоРасширений</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Всего расширений</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВсегоРасширенийКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ВсегоРасширенийРасширеннаяПодсказка" id="7"/>
+				</LabelField>
+				<LabelField name="ВсегоКонфликтов" id="8">
+					<DataPath>ВсегоКонфликтов</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обнаружено конфликтов</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВсегоКонфликтовКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ВсегоКонфликтовРасширеннаяПодсказка" id="10"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПараметрыАвтоВыгрузки" id="162">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключения и выгрузки (Конфигуратор)</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаПараметрыАвтоВыгрузкиРасширеннаяПодсказка" id="163"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПараметрыКнопки" id="196">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПараметрыКнопкиРасширеннаяПодсказка" id="197"/>
+					<ChildItems>
+						<InputField name="ПользовательИБ" id="164">
+							<DataPath>ПользовательИБ</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователь</v8:content>
+								</v8:item>
+							</Title>
+							<Width>18</Width>
+							<ContextMenu name="ПользовательИБКонтекстноеМеню" id="165"/>
+							<ExtendedTooltip name="ПользовательИБРасширеннаяПодсказка" id="166"/>
+						</InputField>
+						<InputField name="ПарольИБ" id="167">
+							<DataPath>ПарольИБ</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пароль</v8:content>
+								</v8:item>
+							</Title>
+							<Width>15</Width>
+							<PasswordMode>true</PasswordMode>
+							<ContextMenu name="ПарольИБКонтекстноеМеню" id="168"/>
+							<ExtendedTooltip name="ПарольИБРасширеннаяПодсказка" id="169"/>
+						</InputField>
+						<CheckBoxField name="УдалятьВременныеФайлы" id="175">
+							<DataPath>УдалятьВременныеФайлы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Удалять после анализа</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="УдалятьВременныеФайлыКонтекстноеМеню" id="176"/>
+							<ExtendedTooltip name="УдалятьВременныеФайлыРасширеннаяПодсказка" id="177"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПараметрыПуть" id="198">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПараметрыПутьРасширеннаяПодсказка" id="199"/>
+					<ChildItems>
+						<InputField name="КаталогВыгрузки" id="200">
+							<DataPath>КаталогВыгрузки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Каталог выгрузки</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="КаталогВыгрузкиКонтекстноеМеню" id="201"/>
+							<ExtendedTooltip name="КаталогВыгрузкиРасширеннаяПодсказка" id="202"/>
+							<Events>
+								<Event name="OnChange">КаталогВыгрузкиПриИзменении</Event>
+								<Event name="StartChoice">КаталогВыгрузкиНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="НадписьИндикаторВыгрузки" id="180">
+			<Visible>false</Visible>
+			<TextColor>style:SpecialTextColor</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполняется фоновая выгрузка расширений...</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="НадписьИндикаторВыгрузкиКонтекстноеМеню" id="181"/>
+			<ExtendedTooltip name="НадписьИндикаторВыгрузкиРасширеннаяПодсказка" id="182"/>
+		</LabelDecoration>
+		<Pages name="СтраницыОсновное" id="14">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыОсновноеРасширеннаяПодсказка" id="15"/>
+			<ChildItems>
+				<Page name="СтраницаКонфликты" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конфликты и коллизии</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаКонфликтыРасширеннаяПодсказка" id="17"/>
+					<ChildItems>
+						<Table name="ТаблицаКонфликтов" id="18">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<DataPath>ТаблицаКонфликтов</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаКонфликтовКонтекстноеМеню" id="19"/>
+							<AutoCommandBar name="ТаблицаКонфликтовКоманднаяПанель" id="20"/>
+							<ExtendedTooltip name="ТаблицаКонфликтовРасширеннаяПодсказка" id="21"/>
+							<SearchStringAddition name="ТаблицаКонфликтовСтрокаПоиска" id="22">
+								<AdditionSource>
+									<Item>ТаблицаКонфликтов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаКонфликтовСтрокаПоискаКонтекстноеМеню" id="23"/>
+								<ExtendedTooltip name="ТаблицаКонфликтовСтрокаПоискаРасширеннаяПодсказка" id="24"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаКонфликтовСостояниеПросмотра" id="25">
+								<AdditionSource>
+									<Item>ТаблицаКонфликтов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаКонфликтовСостояниеПросмотраКонтекстноеМеню" id="26"/>
+								<ExtendedTooltip name="ТаблицаКонфликтовСостояниеПросмотраРасширеннаяПодсказка" id="27"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаКонфликтовУправлениеПоиском" id="28">
+								<AdditionSource>
+									<Item>ТаблицаКонфликтов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаКонфликтовУправлениеПоискомКонтекстноеМеню" id="29"/>
+								<ExtendedTooltip name="ТаблицаКонфликтовУправлениеПоискомРасширеннаяПодсказка" id="30"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТаблицаКонфликтовВыбор</Event>
+								<Event name="OnActivateRow">ТаблицаКонфликтовПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="КонфликтКритичность" id="31">
+									<DataPath>ТаблицаКонфликтов.Критичность</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Критичность</v8:content>
+										</v8:item>
+									</Title>
+									<Width>12</Width>
+									<ContextMenu name="КонфликтКритичностьКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="КонфликтКритичностьРасширеннаяПодсказка" id="33"/>
+								</InputField>
+								<InputField name="КонфликтВид" id="34">
+									<DataPath>ТаблицаКонфликтов.ВидКонфликта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид конфликта</v8:content>
+										</v8:item>
+									</Title>
+									<Width>18</Width>
+									<ContextMenu name="КонфликтВидКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="КонфликтВидРасширеннаяПодсказка" id="36"/>
+								</InputField>
+								<InputField name="КонфликтОбъект" id="37">
+									<DataPath>ТаблицаКонфликтов.ОбъектМетаданных</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Объект метаданных</v8:content>
+										</v8:item>
+									</Title>
+									<Width>25</Width>
+									<ContextMenu name="КонфликтОбъектКонтекстноеМеню" id="38"/>
+									<ExtendedTooltip name="КонфликтОбъектРасширеннаяПодсказка" id="39"/>
+								</InputField>
+								<InputField name="КонфликтЭлемент" id="40">
+									<DataPath>ТаблицаКонфликтов.Элемент</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Метод / Реквизит</v8:content>
+										</v8:item>
+									</Title>
+									<Width>22</Width>
+									<ContextMenu name="КонфликтЭлементКонтекстноеМеню" id="41"/>
+									<ExtendedTooltip name="КонфликтЭлементРасширеннаяПодсказка" id="42"/>
+								</InputField>
+								<InputField name="КонфликтРасширения" id="43">
+									<DataPath>ТаблицаКонфликтов.Расширения</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Участвующие расширения</v8:content>
+										</v8:item>
+									</Title>
+									<Width>28</Width>
+									<ContextMenu name="КонфликтРасширенияКонтекстноеМеню" id="44"/>
+									<ExtendedTooltip name="КонфликтРасширенияРасширеннаяПодсказка" id="45"/>
+								</InputField>
+								<InputField name="КонфликтОписание" id="46">
+									<DataPath>ТаблицаКонфликтов.Описание</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание и рекомендация</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="КонфликтОписаниеКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="КонфликтОписаниеРасширеннаяПодсказка" id="48"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<UsualGroup name="ГруппаДетализацияКонфликта" id="217">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подробное описание и рекомендация</v8:content>
+								</v8:item>
+							</Title>
+							<Height>6</Height>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаДетализацияКонфликтаРасширеннаяПодсказка" id="218"/>
+							<ChildItems>
+								<InputField name="ТекущееОписаниеКонфликта" id="219">
+									<DataPath>ТекущееОписаниеКонфликта</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>5</Height>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<VerticalStretch>true</VerticalStretch>
+									<MultiLine>true</MultiLine>
+									<ExtendedEdit>true</ExtendedEdit>
+									<ContextMenu name="ТекущееОписаниеКонфликтаКонтекстноеМеню" id="220"/>
+									<ExtendedTooltip name="ТекущееОписаниеКонфликтаРасширеннаяПодсказка" id="221"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОбъекты" id="49">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево расширенных объектов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОбъектыРасширеннаяПодсказка" id="50"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаФильтрыДерева" id="222">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаФильтрыДереваРасширеннаяПодсказка" id="223"/>
+							<ChildItems>
+								<CheckBoxField name="ТолькоКонфликты" id="11">
+									<DataPath>ТолькоКонфликты</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Показывать только конфликты</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТолькоКонфликтыКонтекстноеМеню" id="12"/>
+									<ExtendedTooltip name="ТолькоКонфликтыРасширеннаяПодсказка" id="13"/>
+									<Events>
+										<Event name="OnChange">ТолькоКонфликтыПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ДеревоОбъектов" id="51">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<DataPath>ДеревоОбъектов</DataPath>
+							<ContextMenu name="ДеревоОбъектовКонтекстноеМеню" id="52"/>
+							<AutoCommandBar name="ДеревоОбъектовКоманднаяПанель" id="53"/>
+							<ExtendedTooltip name="ДеревоОбъектовРасширеннаяПодсказка" id="54"/>
+							<SearchStringAddition name="ДеревоОбъектовСтрокаПоиска" id="55">
+								<AdditionSource>
+									<Item>ДеревоОбъектов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоОбъектовСтрокаПоискаКонтекстноеМеню" id="56"/>
+								<ExtendedTooltip name="ДеревоОбъектовСтрокаПоискаРасширеннаяПодсказка" id="57"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДеревоОбъектовСостояниеПросмотра" id="58">
+								<AdditionSource>
+									<Item>ДеревоОбъектов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоОбъектовСостояниеПросмотраКонтекстноеМеню" id="59"/>
+								<ExtendedTooltip name="ДеревоОбъектовСостояниеПросмотраРасширеннаяПодсказка" id="60"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДеревоОбъектовУправлениеПоиском" id="61">
+								<AdditionSource>
+									<Item>ДеревоОбъектов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоОбъектовУправлениеПоискомКонтекстноеМеню" id="62"/>
+								<ExtendedTooltip name="ДеревоОбъектовУправлениеПоискомРасширеннаяПодсказка" id="63"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ДеревоНаименование" id="64">
+									<DataPath>ДеревоОбъектов.Наименование</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Объект / Расширение / Член</v8:content>
+										</v8:item>
+									</Title>
+									<Width>35</Width>
+									<ContextMenu name="ДеревоНаименованиеКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ДеревоНаименованиеРасширеннаяПодсказка" id="66"/>
+								</InputField>
+								<InputField name="ДеревоВид" id="67">
+									<DataPath>ДеревоОбъектов.Вид</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид элемента</v8:content>
+										</v8:item>
+									</Title>
+									<Width>15</Width>
+									<ContextMenu name="ДеревоВидКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="ДеревоВидРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="ДеревоТипПерехвата" id="70">
+									<DataPath>ДеревоОбъектов.ТипПерехвата</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Перехватчик / Свойство</v8:content>
+										</v8:item>
+									</Title>
+									<Width>20</Width>
+									<ContextMenu name="ДеревоТипПерехватаКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ДеревоТипПерехватаРасширеннаяПодсказка" id="72"/>
+								</InputField>
+								<InputField name="ДеревоРасширение" id="73">
+									<DataPath>ДеревоОбъектов.Расширение</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Расширение</v8:content>
+										</v8:item>
+									</Title>
+									<Width>20</Width>
+									<ContextMenu name="ДеревоРасширениеКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="ДеревоРасширениеРасширеннаяПодсказка" id="75"/>
+								</InputField>
+								<InputField name="ДеревоЕстьКонфликт" id="76">
+									<DataPath>ДеревоОбъектов.ЕстьКонфликт</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Конфликт</v8:content>
+										</v8:item>
+									</Title>
+									<Width>10</Width>
+									<ContextMenu name="ДеревоЕстьКонфликтКонтекстноеМеню" id="77"/>
+									<ExtendedTooltip name="ДеревоЕстьКонфликтРасширеннаяПодсказка" id="78"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРасширения" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список расширений</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаРасширенияРасширеннаяПодсказка" id="80"/>
+					<ChildItems>
+						<Table name="ТаблицаРасширений" id="81">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<DataPath>ТаблицаРасширений</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаРасширенийКонтекстноеМеню" id="82"/>
+							<AutoCommandBar name="ТаблицаРасширенийКоманднаяПанель" id="83"/>
+							<ExtendedTooltip name="ТаблицаРасширенийРасширеннаяПодсказка" id="84"/>
+							<SearchStringAddition name="ТаблицаРасширенийСтрокаПоиска" id="85">
+								<AdditionSource>
+									<Item>ТаблицаРасширений</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаРасширенийСтрокаПоискаКонтекстноеМеню" id="86"/>
+								<ExtendedTooltip name="ТаблицаРасширенийСтрокаПоискаРасширеннаяПодсказка" id="87"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаРасширенийСостояниеПросмотра" id="88">
+								<AdditionSource>
+									<Item>ТаблицаРасширений</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаРасширенийСостояниеПросмотраКонтекстноеМеню" id="89"/>
+								<ExtendedTooltip name="ТаблицаРасширенийСостояниеПросмотраРасширеннаяПодсказка" id="90"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаРасширенийУправлениеПоиском" id="91">
+								<AdditionSource>
+									<Item>ТаблицаРасширений</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаРасширенийУправлениеПоискомКонтекстноеМеню" id="92"/>
+								<ExtendedTooltip name="ТаблицаРасширенийУправлениеПоискомРасширеннаяПодсказка" id="93"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="РасширениеПорядок" id="94">
+									<DataPath>ТаблицаРасширений.Порядок</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>№</v8:content>
+										</v8:item>
+									</Title>
+									<Width>4</Width>
+									<ContextMenu name="РасширениеПорядокКонтекстноеМеню" id="95"/>
+									<ExtendedTooltip name="РасширениеПорядокРасширеннаяПодсказка" id="96"/>
+								</InputField>
+								<InputField name="РасширениеИмя" id="97">
+									<DataPath>ТаблицаРасширений.Имя</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Имя расширения</v8:content>
+										</v8:item>
+									</Title>
+									<Width>20</Width>
+									<ContextMenu name="РасширениеИмяКонтекстноеМеню" id="98"/>
+									<ExtendedTooltip name="РасширениеИмяРасширеннаяПодсказка" id="99"/>
+								</InputField>
+								<InputField name="РасширениеСиноним" id="100">
+									<DataPath>ТаблицаРасширений.Синоним</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Синоним</v8:content>
+										</v8:item>
+									</Title>
+									<Width>25</Width>
+									<ContextMenu name="РасширениеСинонимКонтекстноеМеню" id="101"/>
+									<ExtendedTooltip name="РасширениеСинонимРасширеннаяПодсказка" id="102"/>
+								</InputField>
+								<InputField name="РасширениеВерсия" id="103">
+									<DataPath>ТаблицаРасширений.Версия</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Версия</v8:content>
+										</v8:item>
+									</Title>
+									<Width>10</Width>
+									<ContextMenu name="РасширениеВерсияКонтекстноеМеню" id="104"/>
+									<ExtendedTooltip name="РасширениеВерсияРасширеннаяПодсказка" id="105"/>
+								</InputField>
+								<CheckBoxField name="РасширениеАктивно" id="106">
+									<DataPath>ТаблицаРасширений.Активно</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Активно</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РасширениеАктивноКонтекстноеМеню" id="107"/>
+									<ExtendedTooltip name="РасширениеАктивноРасширеннаяПодсказка" id="108"/>
+								</CheckBoxField>
+								<CheckBoxField name="РасширениеБезопасныйРежим" id="109">
+									<DataPath>ТаблицаРасширений.БезопасныйРежим</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Безопасный режим</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РасширениеБезопасныйРежимКонтекстноеМеню" id="110"/>
+									<ExtendedTooltip name="РасширениеБезопасныйРежимРасширеннаяПодсказка" id="111"/>
+								</CheckBoxField>
+								<InputField name="РасширениеНазначение" id="112">
+									<DataPath>ТаблицаРасширений.Назначение</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Назначение</v8:content>
+										</v8:item>
+									</Title>
+									<Width>15</Width>
+									<ContextMenu name="РасширениеНазначениеКонтекстноеМеню" id="113"/>
+									<ExtendedTooltip name="РасширениеНазначениеРасширеннаяПодсказка" id="114"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="115">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.АнализРасширений</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ВсегоРасширений" id="116">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего расширений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВсегоКонфликтов" id="117">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего конфликтов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТолькоКонфликты" id="118">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только конфликты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КаталогВыгрузки" id="157">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каталог выгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>260</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПользовательИБ" id="170">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь ИБ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПарольИБ" id="171">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль ИБ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФайлЛогаФон" id="172">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл лога выгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>260</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="УдалятьВременныеФайлы" id="178">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалять временные файлы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ШагИндикатора" id="183">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаг индикатора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВремяНачалаВыгрузки" id="184">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время начала выгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗатраченоСекундВыгрузка" id="185">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Затрачено секунд на выгрузку</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>1</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗатраченоСекундАнализ" id="186">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Затрачено секунд на анализ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>1</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущееОписаниеКонфликта" id="216">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание и рекомендация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаКонфликтов" id="119">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица конфликтов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Критичность" id="120">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидКонфликта" id="121">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОбъектМетаданных" id="122">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Элемент" id="123">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Расширения" id="124">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Описание" id="125">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДеревоОбъектов" id="126">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево объектов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Наименование" id="127">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Вид" id="128">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипПерехвата" id="129">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Расширение" id="130">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьКонфликт" id="131">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДеревоОбъектовПолное" id="190">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево объектов полное</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Наименование" id="191">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Вид" id="192">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипПерехвата" id="193">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Расширение" id="194">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьКонфликт" id="195">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаРасширений" id="132">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица расширений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Порядок" id="133">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>4</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Имя" id="134">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Синоним" id="135">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Версия" id="136">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Активно" id="137">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="БезопасныйРежим" id="138">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Назначение" id="139">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыполнитьАнализ" id="140">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить анализ</v8:content>
+				</v8:item>
+			</Title>
+			<Shortcut>F5</Shortcut>
+			<Action>ВыполнитьАнализОбработка</Action>
+		</Command>
+		<Command name="ВыгрузитьИсходникиКонфигуратором" id="158">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить исходники расширений...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыгрузитьИсходникиКонфигураторомОбработка</Action>
+		</Command>
+		<Command name="СформироватьОтчет" id="214">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать отчет</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СформироватьОтчетОбработка</Action>
+		</Command>
+	</Commands>
+</Form>
