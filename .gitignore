@@ -7,6 +7,7 @@
 
 # Publication drafts & media
 *.docx
+*.odt
 *.html
 *.png
 *.jpg
